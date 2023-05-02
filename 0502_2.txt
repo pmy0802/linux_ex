@@ -254,7 +254,7 @@ root@pmy-virtual-machine:~# usermod --shell /bin/csh poly1
 root@pmy-virtual-machine:~# usermod --groups poly_prof poly1
 usermod: 'poly_prof' 그룹이 없습니다
 root@pmy-virtual-machine:~# usermod --groups pmy poly1
-root@pmy-virtual-machine:~# nano /etc/passwd
+root@pmy-virtual-machine:~# nano /etc/passwd 
 root@pmy-virtual-machine:~# ls /home
 pmy  poly1  poly2  poly3  poly5
 root@pmy-virtual-machine:~# ls /
