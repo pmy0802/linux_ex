@@ -256,7 +256,7 @@ usermod: 'poly_prof' 그룹이 없습니다
 root@pmy-virtual-machine:~# usermod --groups pmy poly1
 root@pmy-virtual-machine:~# nano /etc/passwd 
 root@pmy-virtual-machine:~# ls /home
-pmy  poly1  poly2  poly3  poly5
+pmy  poly1  poly2  poly3  poly5 
 root@pmy-virtual-machine:~# ls /
 apple  dev   lib32       media    opt   sbin      sys
 bin    etc   lib64       melon    proc  snap      tmp
