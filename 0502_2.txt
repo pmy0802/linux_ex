@@ -262,7 +262,7 @@ apple  dev   lib32       media    opt   sbin      sys
 bin    etc   lib64       melon    proc  snap      tmp
 boot   home  libx32      mnt      root  srv       usr
 cdrom  lib   lost+found  newhome  run   swapfile  var
-root@pmy-virtual-machine:~# userdel -r poly5
+root@pmy-virtual-machine:~# userdel -r poly5 
 userdel: poly5 mail spool (/var/mail/poly5) not found
 root@pmy-virtual-machine:~# ls /home
 pmy  poly1  poly2  poly3
