@@ -1,0 +1,41 @@
+root@pmy-virtual-machine:~/linkdir# ls
+originalfile
+root@pmy-virtual-machine:~/linkdir# ln originalfile hardlink
+root@pmy-virtual-machine:~/linkdir# ln -s originalfile softlink
+root@pmy-virtual-machine:~/linkdir# ls -l
+합계 8
+-rw-r--r-- 2 root root 47  5월  9 10:50 hardlink
+-rw-r--r-- 2 root root 47  5월  9 10:50 originalfile
+lrwxrwxrwx 1 root root 12  5월  9 11:10 softlink -> originalfile
+root@pmy-virtual-machine:~/linkdir# ls -il
+합계 8
+682541 -rw-r--r-- 2 root root 47  5월  9 10:50 hardlink
+682541 -rw-r--r-- 2 root root 47  5월  9 10:50 originalfile
+682460 lrwxrwxrwx 1 root root 12  5월  9 11:10 softlink -> originalfile
+root@pmy-virtual-machine:~/linkdir# mv originalfile ../
+root@pmy-virtual-machine:~/linkdir# ls
+hardlink  softlink
+root@pmy-virtual-machine:~/linkdir# cat hardlink
+링크시킬 원본 파일을 작성합니다.
+root@pmy-virtual-machine:~/linkdir# cat softlink
+cat: softlink: 그런 파일이나 디렉터리가 없습니다
+root@pmy-virtual-machine:~/linkdir# cd
+root@pmy-virtual-machine:~# ls -il originalfile 
+682541 -rw-r--r-- 2 root root 47  5월  9 10:50 originalfile
+root@pmy-virtual-machine:~# mv originalfile ./linkdir
+root@pmy-virtual-machine:~# cd linkdir
+root@pmy-virtual-machine:~/linkdir# ls
+hardlink  originalfile  softlink
+root@pmy-virtual-machine:~/linkdir# cat softlink
+링크시킬 원본 파일을 작성합니다.
+root@pmy-virtual-machine:~/linkdir# yes > /dev/null
+죽었음
+root@pmy-virtual-machine:~/linkdir# 
+
+<새창으로 무한루프 종료>
+root@pmy-virtual-machine:~# ps -ef|grep yes
+root        2762    2641 99 11:39 pts/1    00:01:36 yes
+root        2779    2770  0 11:41 pts/2    00:00:00 grep --color=auto yes
+root@pmy-virtual-machine:~# kill -9 2762
+root@pmy-virtual-machine:~# ^C
+root@pmy-virtual-machine:~# 
