@@ -1,0 +1,23 @@
+root@pmy-virtual-machine:~/바탕화면# cd ..
+root@pmy-virtual-machine:~# touch mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod 777 mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-rwxrwxrwx 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod 644 mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-rw-r--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod u+x mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-rwxr--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod u-w mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xr--r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod g+w mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xrw-r-- 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chmod o+x mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xrw-r-x 1 root root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# 
