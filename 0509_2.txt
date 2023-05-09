@@ -1,0 +1,98 @@
+root@pmy-virtual-machine:~# tail /etc/shadow
+gnome-initial-setup:*:19411:0:99999:7:::
+hplip:*:19411:0:99999:7:::
+gdm:*:19411:0:99999:7:::
+pmy:$y$j9T$9jmxoa7o6.RSs4wGyJUPN/$xI60W/9Eg.kuG6QuT893hmhDFX1Er1Z3XmcRDdYyOB3:19430:0:99999:7:::
+poly1:$y$j9T$kBQjTO7Wmoq.ERt1cn0kO.$RpL4Ij9cxYBDVSpj39Mi2p/NxRuHOLTF6ZbIn4tymm8:19479:10:30:10::20818:
+poly2:$y$j9T$V4brHyFG4qff1Q2FsONRM/$rKGPNma4xjfVB/kPWdJqTGDGLatFNblZxkY9LNEkhv9:19479:0:99999:7:::
+poly3:$y$j9T$aRrQED67Xjz8zm7uyUgPt0$JcGdu8aak3T1.GccH6VwGSUoa0c.u3zjcThJ6KVdFIC:19479:0:99999:7:::
+poly4:$y$j9T$UZ6vOdBL2mCYDFNgG767o1$Q6MQFlJuWODzb9QtueSyPlwS0zvdXAEkXhiiKDfID8C:19479:0:99999:7:::
+hanbit1:$y$j9T$zNS8Dq1nTTzxH8gqrh6Zc0$ZqdCqaxPjGjnnYOo2nEG70ZxVW6w4W17LC.2AgH7Z49:19479:0:99999:7:::
+hanbit2:$y$j9T$sWnmlRq1CW5FmDq5zgyYv/$3pPDqlu7vavh.QsxpKdRgzgI.d14ZthVO6URvFvNFjC:19479:0:99999:7:::
+root@pmy-virtual-machine:~# chown poly1 mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xrw-r-x 1 poly1 root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chown poly2.poly2 mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xrw-r-x 1 poly2 poly2 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# chown poly3 mydata.txt
+root@pmy-virtual-machine:~# chown poly2.poly2 mydata.txt
+root@pmy-virtual-machine:~# chgrp root mydata.txt
+root@pmy-virtual-machine:~# ls -l mydata.txt
+-r-xrw-r-x 1 poly2 root 0  5월  9 09:25 mydata.txt
+root@pmy-virtual-machine:~# groups poly3
+poly3 : pmy
+root@pmy-virtual-machine:~# nano sample
+root@pmy-virtual-machine:~# cat sample
+리눅스 명령 연습중
+파일 허가권과 소유권에 대한 명령 실습중
+ls /var
+root@pmy-virtual-machine:~# ls -l sample
+-rw-r--r-- 1 root root 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# chmod u+x sample
+root@pmy-virtual-machine:~# ls -l sample
+-rwxr--r-- 1 root root 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# sample
+명령어 'sample' 을(를) 찾을 수 없습니다. 그러나 다음을 통해 설치할 수 있습니다:
+apt install barcode
+root@pmy-virtual-machine:~# ./sample
+./sample: 줄 1: 리눅스: 명령어를 찾을 수 없음
+./sample: 줄 2: 파일: 명령어를 찾을 수 없음
+backups  crash	local  log   metrics  run   spool
+cache	 lib	lock   mail  opt      snap  tmp
+root@pmy-virtual-machine:~# ls -l sample
+-rwxr--r-- 1 root root 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# chown pmy sample
+root@pmy-virtual-machine:~# ls -l sample
+-rwxr--r-- 1 pmy root 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# chown pmy.pmy sample
+root@pmy-virtual-machine:~# ls -l sample
+-rwxr--r-- 1 pmy pmy 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# chmod 754 sample
+root@pmy-virtual-machine:~# ls -l sample
+-rwxr-xr-- 1 pmy pmy 92  5월  9 10:15 sample
+root@pmy-virtual-machine:~# su - pmy
+pmy@pmy-virtual-machine:~$ sudo su -root
+[sudo] pmy 암호: 
+su: 부적절한 옵션 -- 'r'
+Try 'su --help' for more information.
+pmy@pmy-virtual-machine:~$ sudo su - root
+root@pmy-virtual-machine:~# su - ubuntu
+su: user ubuntu does not exist or the user entry does not contain all the required fields
+root@pmy-virtual-machine:~# su - pmy
+pmy@pmy-virtual-machine:~$ pwd
+/home/pmy
+pmy@pmy-virtual-machine:~$ ls -l /root/sample
+ls: '/root/sample'에 접근할 수 없음: 허가 거부
+pmy@pmy-virtual-machine:~$ ls -ld /root
+drwx------ 15 root root 4096  5월  9 10:15 /root
+pmy@pmy-virtual-machine:~$ logout
+root@pmy-virtual-machine:~# mv sample ~pmy
+root@pmy-virtual-machine:~# ls -l sample
+ls: 'sample'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+root@pmy-virtual-machine:~# su - pmy
+pmy@pmy-virtual-machine:~$ ls -l sample
+-rwxr-xr-- 1 pmy pmy 92  5월  9 10:15 sample
+pmy@pmy-virtual-machine:~$ pwd
+/home/pmy
+pmy@pmy-virtual-machine:~$ ls -ld /pmy
+ls: '/pmy'에 접근할 수 없음: 그런 파일이나 디렉터리가 없습니다
+pmy@pmy-virtual-machine:~$ ls -ld /home/pmy
+drwxr-x--- 14 pmy pmy 4096  5월  9 10:41 /home/pmy
+pmy@pmy-virtual-machine:~$ chmod 777 sample
+pmy@pmy-virtual-machine:~$ ls -l sample
+-rwxrwxrwx 1 pmy pmy 92  5월  9 10:15 sample
+pmy@pmy-virtual-machine:~$ chown root.root sample
+chown: 'sample'의 소유권 바꾸는 중: 명령을 허용하지 않음
+pmy@pmy-virtual-machine:~$ logout
+root@pmy-virtual-machine:~# cd
+root@pmy-virtual-machine:~# mkdir linkdir
+root@pmy-virtual-machine:~# cd linkdir/
+root@pmy-virtual-machine:~/linkdir# vi originalfile
+
+[1]+  멈춤                  vi originalfile
+root@pmy-virtual-machine:~/linkdir# nano originalfile
+root@pmy-virtual-machine:~/linkdir# cat originalfile
+링크시킬 원본 파일을 작성합니다.
+root@pmy-virtual-machine:~/linkdir# ^C
+root@pmy-virtual-machine:~/linkdir# 
