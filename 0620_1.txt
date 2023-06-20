@@ -82,4 +82,331 @@ root@pmy-virtual-machine:/srv/ftp/pub/file1# ufw allow ftp
 규칙이 추가되었습니다
 규칙이 추가되었습니다 (v6)
 root@pmy-virtual-machine:/srv/ftp/pub/file1# systemctl stop ufw
-root@pmy-virtual-machine:/srv/ftp/pub/file1# 
+root@pmy-virtual-machine:/srv/ftp/pub/file1# ifconfig
+ens32: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.40.128  netmask 255.255.255.0  broadcast 192.168.40.255
+        inet6 fe80::a779:801a:31a6:534c  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:e5:71:8a  txqueuelen 1000  (Ethernet)
+        RX packets 858  bytes 500922 (500.9 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 279  bytes 28340 (28.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 168  bytes 15308 (15.3 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 168  bytes 15308 (15.3 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@pmy-virtual-machine:/srv/ftp/pub/file1# cd ..
+root@pmy-virtual-machine:/srv/ftp/pub# ls
+file1  test.txt
+root@pmy-virtual-machine:/srv/ftp/pub# cd
+root@pmy-virtual-machine:~# ls
+linkdir     snap  test3.txt  text2.txt  다운로드  바탕화면  사진  템플릿
+mydata.txt  test  text1.txt  공개       문서      비디오    음악
+root@pmy-virtual-machine:~# systemctl status apache2
+● apache2.service - The Apache HTTP Server
+     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor prese>
+    Drop-In: /usr/lib/systemd/system/apache2.service.d
+             └─apache2-systemd.conf
+     Active: active (running) since Tue 2023-06-20 09:37:15 KST; 34min ago
+   Main PID: 981 (apache2)
+      Tasks: 55 (limit: 4573)
+     Memory: 8.0M
+        CPU: 247ms
+     CGroup: /system.slice/apache2.service
+             ├─981 /usr/sbin/apache2 -k start
+             ├─984 /usr/sbin/apache2 -k start
+             └─985 /usr/sbin/apache2 -k start
+
+ 6월 20 09:37:14 pmy-virtual-machine systemd[1]: Starting The Apache HTTP Serve>
+ 6월 20 09:37:15 pmy-virtual-machine apachectl[946]: AH00558: apache2: Could no>
+ 6월 20 09:37:15 pmy-virtual-machine systemd[1]: Started The Apache HTTP Server.
+root@pmy-virtual-machine:~# systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset:>
+     Active: active (running) since Tue 2023-06-20 09:37:18 KST; 34min ago
+   Main PID: 1137 (mysqld)
+      Tasks: 27 (limit: 4573)
+     Memory: 201.7M
+        CPU: 2.957s
+     CGroup: /system.slice/mysql.service
+             └─1137 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.>
+
+ 6월 20 09:37:14 pmy-virtual-machine systemd[1]: Starting MySQL Community Serve>
+ 6월 20 09:37:18 pmy-virtual-machine systemd[1]: Started MySQL Community Server.
+root@pmy-virtual-machine:~# cd /var/www/html
+root@pmy-virtual-machine:/var/www/html# ls
+01.html  04.html  07.html  10.html  13.html  16.html  19.html  22.html
+02.html  05.html  08.html  11.html  14.html  17.html  20.html  23.html
+03.html  06.html  09.html  12.html  15.html  18.html  21.html  index.html
+root@pmy-virtual-machine:/var/www/html# ifconfig
+ens32: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.40.128  netmask 255.255.255.0  broadcast 192.168.40.255
+        inet6 fe80::a779:801a:31a6:534c  prefixlen 64  scopeid 0x20<link>
+        ether 00:0c:29:e5:71:8a  txqueuelen 1000  (Ethernet)
+        RX packets 1032  bytes 518445 (518.4 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 372  bytes 36150 (36.1 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1000  (Local Loopback)
+        RX packets 170  bytes 15527 (15.5 KB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 170  bytes 15527 (15.5 KB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+root@pmy-virtual-machine:/var/www/html# nano /phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano /phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano /phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano /phpinfo.php
+root@pmy-virtual-machine:/var/www/html# nano phpinfo.php
+root@pmy-virtual-machine:/var/www/html# apt-get -y install php
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다... 완료
+상태 정보를 읽는 중입니다... 완료        
+다음의 추가 패키지가 설치될 것입니다 :
+  libapache2-mod-php7.2 libargon2-0 php7.2 php7.2-cli php7.2-json
+  php7.2-opcache php7.2-readline
+제안하는 패키지:
+  php-pear
+다음 새 패키지를 설치할 것입니다:
+  libapache2-mod-php7.2 libargon2-0 php php7.2 php7.2-cli php7.2-json
+  php7.2-opcache php7.2-readline
+0개 업그레이드, 8개 새로 설치, 0개 제거 및 9개 업그레이드 안 함.
+2,990 k바이트 아카이브를 받아야 합니다.
+이 작업 후 10.5 M바이트의 디스크 공간을 더 사용하게 됩니다.
+받기:1 http://mirror.kakao.com/ubuntu bionic/main amd64 libargon2-0 amd64 0~20161029-1.1 [19.9 kB]
+받기:2 http://mirror.kakao.com/ubuntu bionic/main amd64 php all 1:7.2+60ubuntu1 [3,084 B]
+받기:3 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-json amd64 7.2.24-0ubuntu0.18.04.17 [18.9 kB]
+받기:4 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-opcache amd64 7.2.24-0ubuntu0.18.04.17 [166 kB]
+받기:5 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-readline amd64 7.2.24-0ubuntu0.18.04.17 [12.2 kB]
+받기:6 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-cli amd64 7.2.24-0ubuntu0.18.04.17 [1,410 kB]
+받기:7 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 libapache2-mod-php7.2 amd64 7.2.24-0ubuntu0.18.04.17 [1,352 kB]
+받기:8 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2 all 7.2.24-0ubuntu0.18.04.17 [9,248 B]
+내려받기 2,990 k바이트, 소요시간 4초 (822 k바이트/초)
+Selecting previously unselected package libargon2-0:amd64.
+(데이터베이스 읽는중 ...현재 204036개의 파일과 디렉터리가 설치되어 있습니다.)
+Preparing to unpack .../0-libargon2-0_0~20161029-1.1_amd64.deb ...
+Unpacking libargon2-0:amd64 (0~20161029-1.1) ...
+Selecting previously unselected package php7.2-json.
+Preparing to unpack .../1-php7.2-json_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-json (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php7.2-opcache.
+Preparing to unpack .../2-php7.2-opcache_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-opcache (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php7.2-readline.
+Preparing to unpack .../3-php7.2-readline_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-readline (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php7.2-cli.
+Preparing to unpack .../4-php7.2-cli_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-cli (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package libapache2-mod-php7.2.
+Preparing to unpack .../5-libapache2-mod-php7.2_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking libapache2-mod-php7.2 (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php7.2.
+Preparing to unpack .../6-php7.2_7.2.24-0ubuntu0.18.04.17_all.deb ...
+Unpacking php7.2 (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php.
+Preparing to unpack .../7-php_1%3a7.2+60ubuntu1_all.deb ...
+Unpacking php (1:7.2+60ubuntu1) ...
+php7.2-opcache (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/mods-available/opcache.ini with new version
+libargon2-0:amd64 (0~20161029-1.1) 설정하는 중입니다 ...
+php7.2-json (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/mods-available/json.ini with new version
+php7.2-readline (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/mods-available/readline.ini with new version
+php7.2-cli (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+update-alternatives: using /usr/bin/php7.2 to provide /usr/bin/php (php) in auto mode
+update-alternatives: using /usr/bin/phar7.2 to provide /usr/bin/phar (phar) in auto mode
+update-alternatives: using /usr/bin/phar.phar7.2 to provide /usr/bin/phar.phar (phar.phar) in auto mode
+
+Creating config file /etc/php/7.2/cli/php.ini with new version
+php_invoke: Enabled module ftp for cli sapi
+php_invoke: Enabled module shmop for cli sapi
+php_invoke: Enabled module sysvsem for cli sapi
+php_invoke: Enabled module calendar for cli sapi
+php_invoke: Enabled module iconv for cli sapi
+php_invoke: Enabled module sysvshm for cli sapi
+php_invoke: Enabled module sockets for cli sapi
+php_invoke: Enabled module ctype for cli sapi
+php_invoke: Enabled module phar for cli sapi
+php_invoke: Enabled module gettext for cli sapi
+php_invoke: Enabled module tokenizer for cli sapi
+php_invoke: Enabled module exif for cli sapi
+php_invoke: Enabled module posix for cli sapi
+php_invoke: Enabled module pdo for cli sapi
+php_invoke: Enabled module sysvmsg for cli sapi
+php_invoke: Enabled module fileinfo for cli sapi
+libapache2-mod-php7.2 (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/apache2/php.ini with new version
+php_invoke: Enabled module ftp for apache2 sapi
+php_invoke: Enabled module shmop for apache2 sapi
+php_invoke: Enabled module sysvsem for apache2 sapi
+php_invoke: Enabled module calendar for apache2 sapi
+php_invoke: Enabled module iconv for apache2 sapi
+php_invoke: Enabled module sysvshm for apache2 sapi
+php_invoke: Enabled module sockets for apache2 sapi
+php_invoke: Enabled module ctype for apache2 sapi
+php_invoke: Enabled module phar for apache2 sapi
+php_invoke: Enabled module gettext for apache2 sapi
+php_invoke: Enabled module tokenizer for apache2 sapi
+php_invoke: Enabled module exif for apache2 sapi
+php_invoke: Enabled module posix for apache2 sapi
+php_invoke: Enabled module pdo for apache2 sapi
+php_invoke: Enabled module sysvmsg for apache2 sapi
+php_invoke: Enabled module fileinfo for apache2 sapi
+Module mpm_event disabled.
+Enabling module mpm_prefork.
+apache2_switch_mpm Switch to prefork
+apache2_invoke: Enable module php7.2
+php7.2 (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+php (1:7.2+60ubuntu1) 설정하는 중입니다 ...
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.1) ...
+root@pmy-virtual-machine:/var/www/html# systemctl restart apache2
+root@pmy-virtual-machine:/var/www/html# chmod 777 xe
+root@pmy-virtual-machine:/var/www/html# ls -l
+합계 112
+-rw-r--r--  1 root root   815  6월 12 15:26 01.html
+-rw-r--r--  1 root root   572  6월 12 15:26 02.html
+-rw-r--r--  1 root root   614  6월 12 15:26 03.html
+-rw-r--r--  1 root root   623  6월 12 15:26 04.html
+-rw-r--r--  1 root root   658  6월 12 15:26 05.html
+-rw-r--r--  1 root root   645  6월 12 15:26 06.html
+-rw-r--r--  1 root root   709  6월 12 15:26 07.html
+-rw-r--r--  1 root root   772  6월 12 15:26 08.html
+-rw-r--r--  1 root root   775  6월 12 15:26 09.html
+-rw-r--r--  1 root root   619  6월 12 15:26 10.html
+-rw-r--r--  1 root root   755  6월 12 15:26 11.html
+-rw-r--r--  1 root root   854  6월 12 15:26 12.html
+-rw-r--r--  1 root root   672  6월 12 15:26 13.html
+-rw-r--r--  1 root root   765  6월 12 15:26 14.html
+-rw-r--r--  1 root root   934  6월 12 15:26 15.html
+-rw-r--r--  1 root root  1001  6월 12 15:26 16.html
+-rw-r--r--  1 root root   726  6월 12 15:26 17.html
+-rw-r--r--  1 root root  1049  6월 12 15:26 18.html
+-rw-r--r--  1 root root  1374  6월 12 15:26 19.html
+-rw-r--r--  1 root root   654  6월 12 15:26 20.html
+-rw-r--r--  1 root root   854  6월 12 15:26 21.html
+-rw-r--r--  1 root root   809  6월 12 15:26 22.html
+-rw-r--r--  1 root root  1624  6월 12 15:26 23.html
+-rw-r--r--  1 root root 10918  6월 13 10:27 index.html
+-rw-r--r--  1 root root    21  6월 20 10:17 phpinfo.php
+drwxrwxrwx 13 root root  4096  6월 20 10:39 xe
+root@pmy-virtual-machine:/var/www/html# cd xe/modules
+root@pmy-virtual-machine:/var/www/html/xe/modules# ls
+addon         comment        file                layout   page   session
+admin         communication  importer            member   point  spamfilter
+adminlogging  counter        install             menu     poll   tag
+autoinstall   document       integration_search  message  rss    trash
+board         editor         krzip               module   seo    widget
+root@pmy-virtual-machine:/var/www/html/xe/modules# mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 2
+Server version: 5.7.42-0ubuntu0.18.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> grant all on xeDB.* to xeUser@localhost identified by '1234'
+    -> exit;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'exit' at line 2
+mysql> grant all on xeDB.* to xeUser@localhost identified by '1234';
+Query OK, 0 rows affected, 1 warning (0.00 sec)
+
+mysql> exit
+Bye
+root@pmy-virtual-machine:/var/www/html/xe/modules# mysql -u xeUser -p1234
+mysql: [Warning] Using a password on the command line interface can be insecure.
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.42-0ubuntu0.18.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create databse xeDB;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databse xeDB' at line 1
+mysql> create database xeDB;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> exit
+Bye
+root@pmy-virtual-machine:/var/www/html/xe/modules# apt-get -y install php php-gd php-xml
+패키지 목록을 읽는 중입니다... 완료
+의존성 트리를 만드는 중입니다... 완료
+상태 정보를 읽는 중입니다... 완료        
+패키지 php는 이미 최신 버전입니다 (1:7.2+60ubuntu1).
+다음의 추가 패키지가 설치될 것입니다 :
+  php7.2-gd php7.2-xml
+다음 새 패키지를 설치할 것입니다:
+  php-gd php-xml php7.2-gd php7.2-xml
+0개 업그레이드, 4개 새로 설치, 0개 제거 및 9개 업그레이드 안 함.
+139 k바이트 아카이브를 받아야 합니다.
+이 작업 후 613 k바이트의 디스크 공간을 더 사용하게 됩니다.
+받기:1 http://mirror.kakao.com/ubuntu bionic/main amd64 php-gd all 1:7.2+60ubuntu1 [1,996 B]
+받기:2 http://mirror.kakao.com/ubuntu bionic/universe amd64 php-xml all 1:7.2+60ubuntu1 [2,024 B]
+받기:3 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-gd amd64 7.2.24-0ubuntu0.18.04.17 [27.1 kB]
+받기:4 http://kr.archive.ubuntu.com/ubuntu bionic-updates/main amd64 php7.2-xml amd64 7.2.24-0ubuntu0.18.04.17 [108 kB]
+내려받기 139 k바이트, 소요시간 2초 (64.3 k바이트/초)
+Selecting previously unselected package php7.2-gd.
+(데이터베이스 읽는중 ...현재 204102개의 파일과 디렉터리가 설치되어 있습니다.)
+Preparing to unpack .../php7.2-gd_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-gd (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php-gd.
+Preparing to unpack .../php-gd_1%3a7.2+60ubuntu1_all.deb ...
+Unpacking php-gd (1:7.2+60ubuntu1) ...
+Selecting previously unselected package php7.2-xml.
+Preparing to unpack .../php7.2-xml_7.2.24-0ubuntu0.18.04.17_amd64.deb ...
+Unpacking php7.2-xml (7.2.24-0ubuntu0.18.04.17) ...
+Selecting previously unselected package php-xml.
+Preparing to unpack .../php-xml_1%3a7.2+60ubuntu1_all.deb ...
+Unpacking php-xml (1:7.2+60ubuntu1) ...
+php7.2-gd (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/mods-available/gd.ini with new version
+php-gd (1:7.2+60ubuntu1) 설정하는 중입니다 ...
+php7.2-xml (7.2.24-0ubuntu0.18.04.17) 설정하는 중입니다 ...
+
+Creating config file /etc/php/7.2/mods-available/dom.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/simplexml.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/wddx.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xml.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xmlreader.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xmlwriter.ini with new version
+
+Creating config file /etc/php/7.2/mods-available/xsl.ini with new version
+php-xml (1:7.2+60ubuntu1) 설정하는 중입니다 ...
+Processing triggers for libapache2-mod-php7.2 (7.2.24-0ubuntu0.18.04.17) ...
+root@pmy-virtual-machine:/var/www/html/xe/modules# systemctl restart apache2
+root@pmy-virtual-machine:/var/www/html/xe/modules# 
